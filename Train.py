@@ -18,7 +18,7 @@ def ShowNN(config, genome):
 
 def eval_genomes(genomes, config):
     for genome_id, genome in genomes:
-        ShowNN(config, genome)
+        # ShowNN(config, genome)
         old_fitness = genome.fitness
 
         print()

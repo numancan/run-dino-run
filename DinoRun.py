@@ -1,4 +1,4 @@
-from GetInputs import obstacle_values, SetSpeed
+from GetInputs import obstacle_values
 import pyautogui
 import time
 import cv2
@@ -27,24 +27,20 @@ def Play(genome, config):
         try:
             inputs, is_dino_alive, is_grounded = obstacle_values()
             outputs = net.activate(inputs)
+            print("inputs", inputs)
             if is_grounded:
-                # print("inputs", inputs)
+                
                 # print("outputs", outputs)
+                # if outputs[0] > 0.5:
+                #     print("Duck!")
+                #     pyautogui.keyDown("num2")
+                # else:
+                #     pyautogui.keyUp("num2")
 
-                if outputs[0] > 0.5:
-                    print("Duck!")
-                    pyautogui.keyDown("num2")
-                else:
-                    pyautogui.keyUp("num2")
+                # if outputs[1] > 0.5:
+                #     print("Low Jump!")
+                #     LowJump()
 
-                if outputs[1] > 0.5:
-                    print("Low Jump!")
-                    LowJump()
-
-            # elif(outputs[2] > 0.4):
-            #     print("High Jump!")
-            #     pyautogui.press("num8")
-            #     time.sleep(0.1)
 
             fitness += 1
 
@@ -53,7 +49,6 @@ def Play(genome, config):
             print("Game Stopped!")
             cv2.destroyAllWindows()
             sys.exit()
-    SetSpeed(0)
     cv2.destroyAllWindows()
     return fitness
 
