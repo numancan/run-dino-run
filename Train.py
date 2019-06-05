@@ -10,10 +10,10 @@ from rundino import play
 
 def show_nn(config, genome):
     node_names = {-1: 'Distance', -2: 'Gap', -3: 'Speed', 0: 'Duck', 1: 'Jump'}
-    visualize.draw_net(config, genome, True, node_names=node_names, filename="nn")
+    visualize.draw_net(config, genome, True, node_names=node_names, filename="graph/nn")
     cv2.namedWindow("NN")
     cv2.moveWindow("NN", 50, 300)
-    cv2.imshow("NN", cv2.imread("nn.png"))
+    cv2.imshow("NN", cv2.imread("graph/nn.png"))
 
 
 def eval_genomes(genomes, config):
@@ -48,7 +48,7 @@ def run(config_file):
     print("Train Starting in 3 sec !")
     time.sleep(3)
 
-    winner = p.run(eval_genomes, 30)
+    winner = p.run(eval_genomes, 5)
     pickle.dump(winner, open('winner.pkl', 'wb'))
     ShowNN(config, winner)
 

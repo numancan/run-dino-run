@@ -22,11 +22,12 @@ def play(genome, config):
     while synchronised == False:
         synchronised = make_synchronise()
 
-    fitness = 0
     is_dino_alive = True
 
     net = neat.nn.FeedForwardNetwork.create(genome, config)
     restart()
+
+    start_time=time.time()
 
     # Play until the dinosaur dies
     while is_dino_alive:
@@ -34,26 +35,25 @@ def play(genome, config):
             inputs, is_dino_alive = get_inputs()
             outputs = net.activate(inputs)
 
-            print("inputs", inputs)
+            # print("inputs", inputs)
             # print("outputs", outputs)
 
-            # if outputs[0] > 0.5:
-            #     print("Duck!")
-            #     pyautogui.keyDown("num2")
-            # else:
-            #     pyautogui.keyUp("num2")
+            if outputs[0] > 0.7:
+                print("Duck!")
+                pyautogui.keyDown("num2")
+            else:
+                pyautogui.keyUp("num2")
 
-            # if outputs[1] > 0.5:
-            #     print("Low Jump!")
-            #     lowJump()
-
-            fitness += 1
+            if outputs[1] > 0.7:
+                print("Low Jump!")
+                lowJump()
 
             cv2.waitKey(1)
         except KeyboardInterrupt:
             print("Game Stopped!")
             cv2.destroyAllWindows()
             sys.exit()
+    fitness = round(time.time()-start_time,2)
 
     reset_speed()
     cv2.destroyAllWindows()

@@ -24,8 +24,8 @@ class Screen():
     def rgb(self):
         return cv2.cvtColor(np.array(ImageGrab.grab(bbox=(0, 80, GRAB_WIDTH, GRAB_HIGHT + 80))), cv2.COLOR_BGR2RGB)
 
-    def gray(self):
-        return cv2.cvtColor(self.rgb(), cv2.COLOR_BGR2GRAY)
+    def gray(self,frame):
+        return cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 
 def is_dino_alive(grayframe):
@@ -130,4 +130,4 @@ def get_inputs():
     # cv2.imshow("processed", processed)
     # cv2.waitKey(1)
 
-    return [distance, gap, game_speed], is_dino_alive(screen.gray())
+    return [distance, gap, game_speed], is_dino_alive(screen.gray(frame))

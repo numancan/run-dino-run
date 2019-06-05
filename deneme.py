@@ -1,4 +1,7 @@
-sa = [2, 3, 4, 5]
+import time 
 
-ca = {sa[0]: "x"}
-print(ca.x)
+start = time.time()
+
+time.sleep(3)
+
+print(time.time()-start)
