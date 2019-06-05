@@ -13,5 +13,12 @@ This project requires the following dependencies:
 * [neat-python](https://neat-python.readthedocs.io/en/latest/installation.html)
 * [graphviz](https://pypi.org/project/graphviz/)
 * [Graphviz executable](https://www.graphviz.org/download/)
-*You have to install graphviz library for python and graphviz's executable package*
 
+*You have to install both graphviz library and graphviz's executable package*
+
+## Google's 
+
+## Usage
+
+### Oyunun hazırlanması
+İlk önce oyunun pozisyonun ayarlanması gerekiyor
