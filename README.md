@@ -3,10 +3,7 @@ A simple artificial intelligence to teach Google Chrome's dinosaur game to play,
 
 TODO : GIF
 
-
-## Getting Started
-
-### Dependencies
+## Dependencies
 This project requires the following dependencies:
 * [Python](https://www.python.org/downloads)(>= 3)
 * [NumPy](http://www.numpy.org)
