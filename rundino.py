@@ -63,5 +63,5 @@ def play(genome, config):
 
 def lowJump():
     pyautogui.keyDown("num8")
-    time.sleep(0.1)
+    time.sleep(0.02)
     pyautogui.keyUp("num8")

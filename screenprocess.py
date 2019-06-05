@@ -14,7 +14,7 @@ GRAB_WIDTH = 500
 GRAB_HIGHT = 165
 
 ACCELERATION = 0.0064
-MAX_GAME_SPEED = 5.4
+MAX_GAME_SPEED = 3.9
 # For scaling
 DIS_MULT = 10 / GRAB_WIDTH
 GAP_MULT = 10 / GRAB_HIGHT
@@ -77,7 +77,7 @@ def get_obstacles(processed):
                 dino = [x, y, w, h]
 
             # if obstacle  is on the right
-            elif x > dino[0]:
+            elif x > dino[0]+35:
                 obstacles.append(cnt)
 
     return obstacles, dino
@@ -96,7 +96,6 @@ def make_synchronise():
             if i == 20:
                 print("Synchronised!")
                 return True
-                break
         else:
             print("Can't synchronise!")
             print("Dino x,y {0},{1} must be 0,105".format(
@@ -121,7 +120,9 @@ def get_inputs():
     # if there is obstacle
     if obstacles != []:
         x, y, w, h = cv2.boundingRect(get_near_obs(obstacles))
-        distance = round((x - dino[0]) * DIS_MULT, 1)
+        distance = round((x - (dino[0]+dino[2])) * DIS_MULT, 1)
+
+        # cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 244, 0), 2)
 
         gap = round((GRAB_HIGHT - (y + h)) * GAP_MULT, 1)
         gap = 0 if gap < 2 else gap
@@ -129,5 +130,6 @@ def get_inputs():
     # cv2.imshow("frame", frame)
     # cv2.imshow("processed", processed)
     # cv2.waitKey(1)
+
 
     return [distance, gap, game_speed], is_dino_alive(screen.gray(frame))

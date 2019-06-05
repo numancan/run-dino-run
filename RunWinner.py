@@ -7,7 +7,7 @@ from rundino import play
 
 
 def run(config):
-    genome = pickle.load(open('winners/winner_222_13431.pkl', 'rb'))
+    genome = pickle.load(open('winner.pkl', 'rb'))
     show_nn(config, genome)
     print("Starting 3 sec!")
     time.sleep(3)
@@ -22,9 +22,6 @@ if __name__ == '__main__':
                          config_file)
 
     p = neat.Population(config)
-    p.add_reporter(neat.StdOutReporter(True))
-    stats = neat.StatisticsReporter()
-    p.add_reporter(stats)
-    p.add_reporter(neat.Checkpointer(5))
+
 
     run(config)

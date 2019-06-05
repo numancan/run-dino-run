@@ -7,7 +7,7 @@ import neat
 import visualize
 from rundino import play
 
-# TODO: graphic
+
 def show_nn(config, genome):
     node_names = {-1: 'Distance', -2: 'Gap', -3: 'Speed', 0: 'Duck', 1: 'Jump'}
     visualize.draw_net(config, genome, True, node_names=node_names, filename="graph/nn")
@@ -17,6 +17,7 @@ def show_nn(config, genome):
 
 
 def eval_genomes(genomes, config):
+
     for genome_id, genome in genomes:
 
         show_nn(config, genome)
@@ -40,15 +41,11 @@ def run(config_file):
 
     p = neat.Population(config)
 
-    p.add_reporter(neat.StdOutReporter(True))
-    stats = neat.StatisticsReporter()
-    p.add_reporter(stats)
-    p.add_reporter(neat.Checkpointer(50))
-
     print("Train Starting in 3 sec !")
     time.sleep(3)
+    # Train for 30 generation
+    winner = p.run(eval_genomes, 30)
 
-    winner = p.run(eval_genomes, 15)
     pickle.dump(winner, open('winner.pkl', 'wb'))
     show_nn(config, winner)
 
