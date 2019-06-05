@@ -20,6 +20,7 @@ def restart():
 def play(genome, config):
     global synchronised
     while synchronised == False:
+        pyautogui.hotkey("ctrl", "r")
         synchronised = make_synchronise()
 
     is_dino_alive = True

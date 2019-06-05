@@ -7,12 +7,12 @@ import neat
 import visualize
 from rundino import play
 
-
+# TODO: graphic
 def show_nn(config, genome):
     node_names = {-1: 'Distance', -2: 'Gap', -3: 'Speed', 0: 'Duck', 1: 'Jump'}
     visualize.draw_net(config, genome, True, node_names=node_names, filename="graph/nn")
     cv2.namedWindow("NN")
-    cv2.moveWindow("NN", 50, 300)
+    cv2.moveWindow("NN", 50, 350)
     cv2.imshow("NN", cv2.imread("graph/nn.png"))
 
 
@@ -27,8 +27,8 @@ def eval_genomes(genomes, config):
         else:
             result = play(genome, config)
             genome.fitness = result
-            if result > 3000:
-                pickle.dump(genome, open('winners/winner_{0}_{1}.pkl'.format(genome_id, result), 'wb'))
+            if result > 120:
+                pickle.dump(genome, open('best-genomes/best_{0}_{1}.pkl'.format(genome_id, result), 'wb'))
 
         print("Player ID: {0} Old Fitness: {1} New Fitness: {2}".format(genome_id, old_fitness, genome.fitness))
 
@@ -48,9 +48,9 @@ def run(config_file):
     print("Train Starting in 3 sec !")
     time.sleep(3)
 
-    winner = p.run(eval_genomes, 5)
+    winner = p.run(eval_genomes, 15)
     pickle.dump(winner, open('winner.pkl', 'wb'))
-    ShowNN(config, winner)
+    show_nn(config, winner)
 
 
 if __name__ == '__main__':
