@@ -2,16 +2,17 @@ import os
 import neat
 import pickle
 import time
-from Train import ShowNN
-from DinoRun import Play
+from train import show_nn
+from rundino import play
 
 
-def Run(config):
+def run(config):
     genome = pickle.load(open('winners/winner_222_13431.pkl', 'rb'))
-    ShowNN(config, genome)
+    show_nn(config, genome)
     print("Starting 3 sec!")
     time.sleep(3)
-    Play(genome, config)
+    play(genome, config)
+
 
 if __name__ == '__main__':
     local_dir = os.path.dirname(__file__)
@@ -26,4 +27,4 @@ if __name__ == '__main__':
     p.add_reporter(stats)
     p.add_reporter(neat.Checkpointer(5))
 
-    Run(config)
+    run(config)

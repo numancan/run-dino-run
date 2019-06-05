@@ -1,6 +1,4 @@
-x=14
-y=12.53
+sa = [2, 3, 4, 5]
 
-
-sa=(r for r in range(1) if round(x*y,1) < 800).al
-print(sa)
+ca = {sa[0]: "x"}
+print(ca.x)

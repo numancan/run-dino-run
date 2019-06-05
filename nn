@@ -1,0 +1,14 @@
+digraph {
+	node [fontsize=9 height=0.2 shape=circle width=0.2]
+	Distance [fillcolor=lightgray shape=box style=filled]
+	Gap [fillcolor=lightgray shape=box style=filled]
+	Speed [fillcolor=lightgray shape=box style=filled]
+	Duck [fillcolor=lightblue style=filled]
+	Jump [fillcolor=lightblue style=filled]
+	Distance -> Duck [color=red penwidth=0.2569256342000551 style=solid]
+	Distance -> Jump [color=green penwidth=0.16335751410528251 style=solid]
+	Gap -> Duck [color=green penwidth=0.21309037832341984 style=solid]
+	Gap -> Jump [color=red penwidth=0.2767266163902433 style=solid]
+	Speed -> Duck [color=green penwidth=0.1273907489755205 style=solid]
+	Speed -> Jump [color=red penwidth=0.24402081834744718 style=solid]
+}

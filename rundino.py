@@ -1,14 +1,15 @@
-from GetInputs import obstacle_values
+from screenprocess import get_inputs, make_synchronise, reset_speed
 import pyautogui
 import time
 import cv2
 import neat
 import sys
+
 pyautogui.PAUSE = 0
-# print(neat.__file__)
+synchronised = False
 
 
-def Restart():
+def restart():
     pyautogui.hotkey("ctrl", "r")
     time.sleep(0.5)
     pyautogui.keyDown("num8")
@@ -16,31 +17,35 @@ def Restart():
     pyautogui.keyUp("num8")
 
 
-def Play(genome, config):
-    is_dino_alive = True
-    is_grounded = True
+def play(genome, config):
+    global synchronised
+    while synchronised == False:
+        synchronised = make_synchronise()
+
     fitness = 0
+    is_dino_alive = True
+
     net = neat.nn.FeedForwardNetwork.create(genome, config)
-    Restart()
+    restart()
+
     # Play until the dinosaur dies
     while is_dino_alive:
         try:
-            inputs, is_dino_alive, is_grounded = obstacle_values()
+            inputs, is_dino_alive = get_inputs()
             outputs = net.activate(inputs)
+
             print("inputs", inputs)
-            if is_grounded:
-                
-                # print("outputs", outputs)
-                # if outputs[0] > 0.5:
-                #     print("Duck!")
-                #     pyautogui.keyDown("num2")
-                # else:
-                #     pyautogui.keyUp("num2")
+            # print("outputs", outputs)
 
-                # if outputs[1] > 0.5:
-                #     print("Low Jump!")
-                #     LowJump()
+            # if outputs[0] > 0.5:
+            #     print("Duck!")
+            #     pyautogui.keyDown("num2")
+            # else:
+            #     pyautogui.keyUp("num2")
 
+            # if outputs[1] > 0.5:
+            #     print("Low Jump!")
+            #     lowJump()
 
             fitness += 1
 
@@ -49,11 +54,13 @@ def Play(genome, config):
             print("Game Stopped!")
             cv2.destroyAllWindows()
             sys.exit()
+
+    reset_speed()
     cv2.destroyAllWindows()
     return fitness
 
 
-def LowJump():
+def lowJump():
     pyautogui.keyDown("num8")
     time.sleep(0.1)
     pyautogui.keyUp("num8")
