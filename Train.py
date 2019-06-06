@@ -15,8 +15,9 @@ def show_nn(config, genome):
     cv2.moveWindow("NN", 50, 350)
     cv2.imshow("NN", cv2.imread("graph/nn.png"))
 
-
+generation=1
 def eval_genomes(genomes, config):
+    global generation
 
     for genome_id, genome in genomes:
 
@@ -37,10 +38,13 @@ def eval_genomes(genomes, config):
         print(  
                 "\n"*10,
                 "*"*50,
+                "\n Generation: {0}\n".format(generation),
                 "\n Player ID: {0} Old Fitness: {1} New Fitness: {2}\n".format(genome_id, old_fitness, genome.fitness),
                 "*"*50+"\n",
                 "\n"*10
              )
+
+    generation+=1
 
 
 def run(config_file):
