@@ -12,7 +12,7 @@ This project requires the following dependencies:
 * [pyautogui](https://pyautogui.readthedocs.io/en/latest/install.html)
 * [neat-python](https://neat-python.readthedocs.io/en/latest/installation.html)
 * [graphviz](https://pypi.org/project/graphviz/)
-* [Graphviz executable](https://www.graphviz.org/download/)
+* [Graphviz executable](https://www.graphviz.org/download/)(==2.38)
 
 *You have to install both graphviz library and graphviz's executable package*
 
