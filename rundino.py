@@ -1,9 +1,9 @@
 from screenprocess import get_inputs, make_synchronise, reset_speed
 import pyautogui
 import time
-import cv2
 import neat
 import sys
+import cv2
 
 pyautogui.PAUSE = 0
 synchronised = False
@@ -18,6 +18,7 @@ def restart():
 
 
 def play(genome, config):
+
     global synchronised
     while synchronised == False:
         pyautogui.hotkey("ctrl", "r")
@@ -46,22 +47,22 @@ def play(genome, config):
                 pyautogui.keyUp("num2")
 
             if outputs[1] > 0.7:
-                print("Low Jump!")
-                lowJump()
-
+                print("Jump!")
+                jump()
+                
             cv2.waitKey(1)
         except KeyboardInterrupt:
             print("Game Stopped!")
             cv2.destroyAllWindows()
             sys.exit()
+
     fitness = round(time.time()-start_time,2)
 
     reset_speed()
-    cv2.destroyAllWindows()
     return fitness
 
 
-def lowJump():
+def jump():
     pyautogui.keyDown("num8")
     time.sleep(0.02)
     pyautogui.keyUp("num8")

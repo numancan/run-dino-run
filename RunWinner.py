@@ -15,13 +15,16 @@ def run(config):
 
 
 if __name__ == '__main__':
+    
     local_dir = os.path.dirname(__file__)
     config_file = os.path.join(local_dir, 'config-feedforward')
+
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_file)
 
+
     p = neat.Population(config)
 
-
     run(config)
+

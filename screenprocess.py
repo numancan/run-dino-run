@@ -103,7 +103,6 @@ def make_synchronise():
     return False
 
 
-# TODO: Night Mode
 def get_inputs():
 
     update_speed()
