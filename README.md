@@ -27,3 +27,14 @@ This project requires the following dependencies:
 
 4- Change all code in the index.js with this. TODO:RAW link
 
+* ### Training AI
+
+1- Open **index.html**. You have to shrink the page like this:
+
+TODO: PHOTO
+
+2- Run **train.py** and set window position
+
+TODO: GIF
+
+After calibrating, train will start. Every best AI's neuron saves under best
