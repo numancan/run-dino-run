@@ -19,22 +19,34 @@ This project requires the following dependencies:
 ## How To Use
 
 * ### Installing and preparing game
-1- Go to [t-rex-runner](https://github.com/wayou/t-rex-runner) and download zip file.
+  1- Go to [t-rex-runner](https://github.com/wayou/t-rex-runner) and download zip file.
 
-2- Extract zip file.
+  2- Extract zip file.
 
-3- Open **index.js** with notepad or any text editor.
+  3- Open **index.js** with notepad or any text editor.
 
-4- Change all code in the index.js with this. TODO:RAW link
+  4- Change all code in the index.js with this. TODO:RAW link
 
 * ### Training AI
 
-1- Open **index.html**. You have to shrink the page like this:
+  1- Open **index.html**. You have to shrink the page like this:
 
-TODO: PHOTO
+  TODO: PHOTO
 
-2- Run **train.py** and set window position
+  2- Run **train.py** and set window position
 
-TODO: GIF
+  TODO: GIF
 
-After calibrating, train will start. Every best AI's neuron saves under best
+  After calibrating, train will start. Every best AI's neuron saves under **best-genomes** file
+
+* ### Runnig winner
+
+TODO: KONTROL ET
+```
+python runwinner.py best-genomes/winner_35_4095.pkl
+```
+
+## TODO
+* run winner with name
+* change syn with calibrating
+* runwinner with arguman
