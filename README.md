@@ -22,6 +22,4 @@ This project requires the following dependencies:
 1- Go to [t-rex-runner](https://github.com/wayou/t-rex-runner) and download zip file.
 2- Extract zip file
 3- Open **index.js** with notepad or any text editor.
-4- Change this lines 
-        MAX_SPEED: 13,
-        MAX_SPEED: 12,
+4- Change all code in the index.js with this. TODO:RAW link
