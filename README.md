@@ -1,5 +1,5 @@
 # AI learn how to play Google's dinosaur game
-A simple artificial intelligence to teach Google Chrome's dinosaur game to play, using NEAT (Neuroevolution of augmenting topologies) algorithm. Learn more about [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies)
+A simple artificial intelligence to teach Google Chrome's dinosaur game to play, using [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) (Neuroevolution of augmenting topologies) algorithm.
 
 TODO : GIF
 
@@ -16,9 +16,12 @@ This project requires the following dependencies:
 
 *You have to install both graphviz library and graphviz's executable package*
 
-## Google's 
+## How To Use
 
-## Usage
-
-### Oyunun hazırlanması
-İlk önce oyunun pozisyonun ayarlanması gerekiyor
+### Installing and preparing game
+1- Go to [t-rex-runner](https://github.com/wayou/t-rex-runner) and download zip file.
+2- Extract zip file
+3- Open **index.js** with notepad or any text editor.
+4- Change this lines 
+        MAX_SPEED: 13,
+        MAX_SPEED: 12,
