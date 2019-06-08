@@ -5,8 +5,8 @@ import numpy as np
 import time
 
 
-replay_but_template = cv2.imread("assets/restart.png", 0)
-dino_template = cv2.imread("assets/dino.png", 0)
+replay_but_template = cv2.imread("template/restart.png", 0)
+
 
 game_speed = 0
 
@@ -100,7 +100,8 @@ def make_synchronise():
             print("Can't synchronise!")
             print("Dino x,y {0},{1} must be 0,105".format(
                 dino[0], dino[1]))
-
+            
+        time.sleep(0.5)
         # cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
         # cv2.imshow("fra",frame)
         # cv2.waitKey(1)
@@ -125,6 +126,7 @@ def get_inputs():
         x, y, w, h = cv2.boundingRect(get_near_obs(obstacles))
         distance = round((x - (dino[0]+dino[2])) * DIS_MULT, 1)
 
+        # cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
         # cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 244, 0), 2)
 
         gap = round((GRAB_HIGHT - (y + h)) * GAP_MULT, 1)

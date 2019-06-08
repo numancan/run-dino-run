@@ -1,4 +1,5 @@
 import os
+import sys
 import neat
 import pickle
 import time
@@ -7,7 +8,12 @@ from rundino import play
 
 
 def run(config):
-    genome = pickle.load(open('best-genomes/best_378_2544.71.pkl', 'rb'))
+    try:
+        file=sys.argv[1]
+    except :
+        file='best-genomes/best_378_2544.71.pkl'
+
+    genome = pickle.load(open(file, 'rb'))
     show_nn(config, genome)
     print("Starting 3 sec!")
     time.sleep(3)
