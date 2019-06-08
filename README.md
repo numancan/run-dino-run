@@ -1,7 +1,9 @@
 # AI learn how to play Google's dinosaur game
 A simple artificial intelligence to teach Google Chrome's dinosaur game to play, using [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) (Neuroevolution of augmenting topologies) algorithm.
 
-TODO : GIF
+<p align="center"> 
+<img src="https://media.giphy.com/media/M9fr98UBtOAiGdwWoc/giphy.gif">
+</p>
 
 ## How it works
 
