@@ -36,7 +36,7 @@ def play(genome, config):
         try:
             inputs, is_dino_alive = get_inputs()
             outputs = net.activate(inputs)
-
+            
             # print("inputs", inputs)
             # print("outputs", outputs)
 

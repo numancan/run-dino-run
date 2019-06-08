@@ -7,7 +7,7 @@ from rundino import play
 
 
 def run(config):
-    genome = pickle.load(open('winner.pkl', 'rb'))
+    genome = pickle.load(open('best-genomes/best_378_2544.71.pkl', 'rb'))
     show_nn(config, genome)
     print("Starting 3 sec!")
     time.sleep(3)

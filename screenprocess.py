@@ -100,6 +100,10 @@ def make_synchronise():
             print("Can't synchronise!")
             print("Dino x,y {0},{1} must be 0,105".format(
                 dino[0], dino[1]))
+
+        # cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
+        # cv2.imshow("fra",frame)
+        # cv2.waitKey(1)
     return False
 
 
@@ -126,9 +130,11 @@ def get_inputs():
         gap = round((GRAB_HIGHT - (y + h)) * GAP_MULT, 1)
         gap = 0 if gap < 2 else gap
 
+
+    game_info=is_dino_alive(screen.gray(frame))
+
     # cv2.imshow("frame", frame)
     # cv2.imshow("processed", processed)
     # cv2.waitKey(1)
 
-
-    return [distance, gap, game_speed], is_dino_alive(screen.gray(frame))
+    return [distance, gap, game_speed], game_info
