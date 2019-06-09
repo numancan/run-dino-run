@@ -2,12 +2,14 @@
 A simple artificial intelligence to teach Google Chrome's dinosaur game to play, using [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) (Neuroevolution of augmenting topologies) algorithm.
 
 <p align="center"> 
-<img src="https://media.giphy.com/media/M9fr98UBtOAiGdwWoc/giphy.gif">
+<img src="images/winner.gif">
 </p>
 
 ## How it works
 
-TODO: ALGORITHM
+<p align="center"> 
+<img src="images/how-it-works.png">
+</p>
 
 
 ## Dependencies
@@ -32,7 +34,7 @@ This project requires the following dependencies:
 
   3- Open **index.js** with notepad or any text editor.
 
-  4- Change all code in the index.js with this. TODO:RAW link
+  4- Change all code in the index.js with [this](https://raw.githubusercontent.com/numancan/run-dino-run/master/__pycache__/index.txt?token=AJBXZ6GFU65WKDMVSQTO6WK47SPHW).
 
 * ### Training AI
 
