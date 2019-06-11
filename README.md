@@ -27,7 +27,7 @@ This project requires the following dependencies:
 
 ## How To Use
 
-* ### Installing and preparing game
+* ### Install and prepare game
   1- Go to [t-rex-runner](https://github.com/wayou/t-rex-runner) and download zip file.
 
   2- Extract zip file.
@@ -36,26 +36,22 @@ This project requires the following dependencies:
 
   4- Change all code in the index.js with [this](https://raw.githubusercontent.com/numancan/run-dino-run/master/__pycache__/index.txt?token=AJBXZ6GFU65WKDMVSQTO6WK47SPHW).
 
-* ### Training AI
-
+* ### Set position of game window
   1- Open **index.html**. You have to shrink the page like this:
+  
+  ![shrink](images/shrink.gif)
+  
+  2- Set position
+  
+  ![shrink](images/set.gif)
 
-  TODO: PHOTO
+* ### Train
 
-  2- Run **train.py** and set window position
+  1-Run **train.py**. 
+  
+* ### Run trained
 
-  TODO: GIF
-
-  After calibrating, train will start. Every best AI's neuron saves under **best-genomes** file
-
-* ### Runnig winner
-
-TODO: KONTROL ET
 ```
-python runwinner.py best-genomes/winner_35_4095.pkl
+python runwinner.py best-genomes/best_378_2544.71.pkl
 ```
 
-## TODO
-* run winner with name
-* change syn with calibrating
-* runwinner with arguman
