@@ -26,7 +26,7 @@ This project requires the following dependencies:
 * [graphviz](https://pypi.org/project/graphviz/)
 * [Graphviz executable](https://www.graphviz.org/download/)(==2.38)
 
-*You have to install both graphviz library and graphviz's executable package*
+*You have to install both graphviz library and graphviz's executable package.*
 
 ## How To Use
 
@@ -56,6 +56,7 @@ This project requires the following dependencies:
 * ### Run trained AI
 
   1- Run **runwinner.py**. If you want to run which AI you want, you should write with .pkl file.
+  
   Example:
  ```
   python runwinner.py best-genomes/best_378_2544.71.pkl
