@@ -41,17 +41,24 @@ This project requires the following dependencies:
   
   ![shrink](images/shrink.gif)
   
-  2- Set position
+  2- Set window position.
   
   ![shrink](images/set.gif)
 
-* ### Train
 
-  1-Run **train.py**. 
+* ### Train the AI
+
+  1- Run **train.py**. 
   
-* ### Run trained
+* ### Run trained AI
 
-```
-python runwinner.py best-genomes/best_378_2544.71.pkl
-```
+  1- Run **runwinner.py**. If you want to run which AI you want, you should write with .pkl file.
+  Example:
+ ```
+  python runwinner.py best-genomes/best_378_2544.71.pkl
+  ```
+  
+### **Warning!**
+While running the code, you can't use your pc because simulating key presses for dino movement.
+
 
