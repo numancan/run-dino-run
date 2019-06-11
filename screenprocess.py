@@ -83,32 +83,32 @@ def get_obstacles(processed):
     return obstacles, dino
 
 
-def make_synchronise():
+def make_synchronize():
     screen = Screen()
     i = 0
     while True:
         frame = screen.rgb()
         processed = process_screen(frame)
         _, dino = get_obstacles(processed)
-        if dino[0] == 0 and dino[1] == 105:
-            print("Synchronising!")
+        if dino[0] == 0 and dino[1] == 105 :
+            print("Synchronizing!")
             i += 1
             if i == 20:
-                print("Synchronised!")
+                print("Synchronized!")
                 return True
         else:
-            print("Can't synchronise!")
+            print("Can't synchronize!")
             print("Dino x,y {0},{1} must be 0,105".format(
                 dino[0], dino[1]))
             
-        time.sleep(0.5)
+        time.sleep(0.05)
         # cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
         # cv2.imshow("fra",frame)
         # cv2.waitKey(1)
     return False
 
 
-def get_inputs():
+def get_inputs(show=False):
 
     update_speed()
 
@@ -125,18 +125,17 @@ def get_inputs():
     if obstacles != []:
         x, y, w, h = cv2.boundingRect(get_near_obs(obstacles))
         distance = round((x - (dino[0]+dino[2])) * DIS_MULT, 1)
-
-        # cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
-        # cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 244, 0), 2)
-
         gap = round((GRAB_HIGHT - (y + h)) * GAP_MULT, 1)
         gap = 0 if gap < 2 else gap
 
+        if show:
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 244, 0), 2)
+            cv2.rectangle(frame, (dino[0], dino[1]), (dino[0] + dino[2], dino[1] + dino[3]), (255, 244, 0), 2)
+            cv2.imshow("frame", frame)
+            cv2.imshow("processed", processed)
+            cv2.waitKey(1)
+
 
     game_info=is_dino_alive(screen.gray(frame))
-
-    # cv2.imshow("frame", frame)
-    # cv2.imshow("processed", processed)
-    # cv2.waitKey(1)
 
     return [distance, gap, game_speed], game_info

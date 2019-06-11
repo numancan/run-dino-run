@@ -1,4 +1,4 @@
-from screenprocess import get_inputs, make_synchronise, reset_speed
+from screenprocess import get_inputs, make_synchronize, reset_speed
 import pyautogui
 import time
 import neat
@@ -6,7 +6,7 @@ import sys
 import cv2
 
 pyautogui.PAUSE = 0
-synchronised = False
+synchronized = False
 
 
 def restart():
@@ -19,10 +19,10 @@ def restart():
 
 def play(genome, config):
 
-    global synchronised
-    while synchronised == False:
+    global synchronized
+    while synchronized == False:
         pyautogui.hotkey("ctrl", "r")
-        synchronised = make_synchronise()
+        synchronized = make_synchronize()
 
     is_dino_alive = True
 
