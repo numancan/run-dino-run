@@ -1,4 +1,4 @@
-# AI learn how to play Google's dinosaur game
+# RUN Dino RUN!
 A simple artificial intelligence to play Google Chrome's dinosaur game, using [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) (Neuroevolution of augmenting topologies) algorithm.
 
 
